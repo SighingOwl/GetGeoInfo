@@ -38,6 +38,7 @@ public class KakaoGeoAPI {
             GeoInfo geoInfo = new GeoInfo();
             for(JsonElement geo : doc) {
                 JsonObject geoJson = geo.getAsJsonObject(); // 추출한 document 내용을 Json 객체로 변환
+                geoInfo.setAddress(geoJson.get("address_name").getAsString());  // 전체 주소
                 geoInfo.setLatitude(geoJson.get("y").getAsString()); // y = latitude
                 geoInfo.setLongitude(geoJson.get("x").getAsString()); // x = longitude
             }

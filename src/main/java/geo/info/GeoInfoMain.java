@@ -11,6 +11,7 @@ public class GeoInfoMain {
             String addr = scan.nextLine();
             GeoInfo geoInfo = KakaoGeoAPI.getAddressCoordinate(addr);
 
+            System.out.println("주소: " + geoInfo.getAddress());
             System.out.println("위도: " + geoInfo.getLatitude());
             System.out.println("경도: " + geoInfo.getLongitude());
 

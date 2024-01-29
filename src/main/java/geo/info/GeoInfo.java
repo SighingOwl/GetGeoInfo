@@ -1,15 +1,25 @@
 package geo.info;
 
 public class GeoInfo {
+    private String address;
     private String latitude;
     private String longitude;
 
     public GeoInfo() {
     }
 
-    public GeoInfo(String latitude, String longitude) {
+    public GeoInfo(String address, String latitude, String longitude) {
+        this.address = address;
         this.latitude = latitude;
         this.longitude = longitude;
+    }
+
+    public java.lang.String getAddress() {
+        return address;
+    }
+
+    public void setAddress(java.lang.String address) {
+        this.address = address;
     }
 
     public String getLatitude() {
@@ -31,7 +41,8 @@ public class GeoInfo {
     @Override
     public String toString() {
         return "GeoInfo{" +
-                "latitude='" + latitude + '\'' +
+                "address='" + address + '\'' +
+                ", latitude='" + latitude + '\'' +
                 ", longitude='" + longitude + '\'' +
                 '}';
     }
