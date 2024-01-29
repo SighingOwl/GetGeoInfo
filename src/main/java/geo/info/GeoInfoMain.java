@@ -15,7 +15,7 @@ public class GeoInfoMain {
                 System.out.println("위도: " + geoInfo.getLatitude());
                 System.out.println("경도: " + geoInfo.getLongitude());
             }   else {
-                System.out.println("검색 결과가 존재하지않습니다.");
+                System.out.println("검색 결과가 존재하지 않습니다.");
             }
         } catch (IOException e) {
             System.err.println("오류가 발생했습니다: " + e.getMessage());
