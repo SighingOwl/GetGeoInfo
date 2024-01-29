@@ -36,13 +36,15 @@ public class KakaoGeoAPI {
             JsonObject jsonResp = gson.fromJson(resp.body().charStream(), JsonObject.class);
             JsonArray doc = jsonResp.getAsJsonArray("documents");    // Kakao API로 받은 응답 중 document의 내용을 추출
             GeoInfo geoInfo = new GeoInfo();
-            for(JsonElement geo : doc) {
-                JsonObject geoJson = geo.getAsJsonObject(); // 추출한 document 내용을 Json 객체로 변환
+            if(doc.size() > 0) {
+                JsonObject geoJson = doc.get(0).getAsJsonObject(); // 추출한 document 내용을 Json 객체로 변환
                 geoInfo.setAddress(geoJson.get("address_name").getAsString());  // 전체 주소
                 geoInfo.setLatitude(geoJson.get("y").getAsString()); // y = latitude
                 geoInfo.setLongitude(geoJson.get("x").getAsString()); // x = longitude
+                return geoInfo;
+            }   else {
+                return null;
             }
-            return geoInfo;
         }
     }
 }
