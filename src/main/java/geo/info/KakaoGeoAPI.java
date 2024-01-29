@@ -15,7 +15,7 @@ import java.util.List;
 
 //  Kakao REST API 사용
 public class KakaoGeoAPI {
-    private static final String API_KEY = "5948b2b4db36d9fc48f9e6b1623f06e0";   // REST API Key
+    private static final String API_KEY = "";   // REST API Key
     private static final String API_BASE_URL = "https://dapi.kakao.com/v2/local/search/address.json";   // json 형식인 주소 정보 GET
     private static final OkHttpClient client = new OkHttpClient();
     private static final Gson gson = new Gson();
